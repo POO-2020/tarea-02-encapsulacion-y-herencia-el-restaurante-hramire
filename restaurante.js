@@ -1,5 +1,5 @@
 export default class Restaurante{
-    constructor(nombre,telefono,direccion){
+    constructor({nombre,telefono,direccion}){
         this._nombre = nombre
         this._telefono = telefono
         this._direccion = direccion 
@@ -14,12 +14,21 @@ export default class Restaurante{
             console.log(x.getDescripcion())})
 
     }
-    registrarPedido(y){
-        this._pedidos.push(y)
+    registrarPedido(pedido){
+        this._pedidos.push(pedido)
     }
     listarPedidos(){
         this._pedidos.forEach(y =>{
             console.log(y.getResumen())
         })
+    }
+    buscarPedido(pedido){
+
+    }
+    eliminarPedido(pedido){
+
+    }
+    modificarPedido(pedido){
+        
     }
 }

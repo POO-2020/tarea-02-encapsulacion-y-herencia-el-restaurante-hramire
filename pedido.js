@@ -1,5 +1,6 @@
 export default class Pedido{
-    constructor(fecha,hora,cliente){
+    constructor({numeroPedido,fecha,hora,cliente}){
+        this._numeroPedido = numeroPedido
         this._fecha = fecha
         this._hora = hora
         this._cliente = cliente
