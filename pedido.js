@@ -1,20 +1,20 @@
 export default class Pedido{
     constructor(fecha,hora,cliente){
-        this.fecha = fecha
-        this.hora = hora
-        this.cliente = cliente
-        this.elementosPedidos = [
+        this._fecha = fecha
+        this._hora = hora
+        this._cliente = cliente
+        this._elementosPedidos = [
 
         ]
     }
     getResumen(){
-        return (`${this.fecha.getFecha()},${this.hora.getFormato12()},${this.getNumeroElementos()}, ${this.getNumeroPoductos()},$${this.getCostoTotal()}`)
+        return (`${this._fecha.getFecha()},${this._hora.getFormato12()},${this.getNumeroElementos()}, ${this.getNumeroPoductos()},$${this. getCostoTotal()}`)
 
     }
     getNumeroElementos(){
         let numero = 0 
 
-        this.elementosPedidos.forEach( (elemento, i) =>{
+        this._elementosPedidos.forEach( (elemento, i) =>{
             numero = i 
         })
         numero++
@@ -31,7 +31,7 @@ export default class Pedido{
     }
     getCostoTotal(){
         let total = 0 
-        this.elementosPedidos.forEach(elemento =>{
+        this._elementosPedidos.forEach(elemento =>{
             total = (total + ((elemento.cantidad) * (elemento.producto.precio.valor)))
         })
         return (total)
@@ -42,7 +42,7 @@ export default class Pedido{
 
     }
     listarElemento(){
-        this.elementosPedidos.forEach(elemento =>{
+        this._elementosPedidos.forEach(elemento =>{
             console.log(elemento.getDescripcion())
         })
 

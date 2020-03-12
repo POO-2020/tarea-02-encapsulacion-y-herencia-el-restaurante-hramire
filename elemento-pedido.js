@@ -5,10 +5,10 @@ export default class ElementoPedido{
      * @param {number} cantidad precio total
      */
     constructor(producto,cantidad){
-        this.producto = producto
-        this.cantidad = cantidad
+        this._producto = producto
+        this._cantidad = cantidad
     }
     getDescripcion(){
-       return (`${this.cantidad} X ${this.producto.nombre} ${this.producto.precio.valor * this.cantidad}`)
+       return (`${this._cantidad} X ${this._producto.nombre} ${this._producto.precio.valor * this._cantidad}`)
     }
 } 

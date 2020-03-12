@@ -6,12 +6,12 @@ export default class Tiempo{
      * @param {string} periodo periodo del día, am pm 
      */
 constructor(hora,minuto,periodo){
-this.hora = hora
-this.minuto = minuto
-this.periodo = periodo
+this._hora = hora
+this._minuto = minuto
+this._periodo = periodo
 }
 getFormato12(){
-    return (`${this.hora}: ${this.minuto}. ${this.periodo}`)
+    return (`${this._hora}: ${this._minuto}. ${this._periodo}`)
 
 
 }
@@ -20,20 +20,20 @@ getFormato24(){
     let suma 
     let resta 
 
-    if ((this.hora == 12) && (this.periodo == "am")){
-        resta = this.hora - 12 
+    if ((this._hora == 12) && (this._periodo == "am")){
+        resta = this._hora - 12 
         hora24 = resta 
 
-        return `${hora24}:${this.minuto} ${this.periodo}`
+        return `${hora24}:${this._minuto} ${this._periodo}`
     }
     if ((this.hora >= 1 ) && (this.periodo == "pm")){
         suma = this.hora + 12
         hora24 = suma 
         
-        return `${hora24}:${this.minuto} ${this.periodo}` 
+        return `${hora24}:${this._minuto} ${this._periodo}` 
     }
     else{
-        return `${hora24}: ${this.minuto} ${this.periodo}`
+        return `${hora24}: ${this._minuto} ${this._periodo}`
     }
 }
 }

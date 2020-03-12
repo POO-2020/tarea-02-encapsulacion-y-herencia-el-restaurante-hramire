@@ -1,24 +1,24 @@
 export default class Restaurante{
     constructor(nombre,telefono,direccion){
-        this.nombre = nombre
-        this.telefono = telefono
-        this.direccion = direccion 
-        this.productos = []
-        this.pedidos = []
+        this._nombre = nombre
+        this._telefono = telefono
+        this._direccion = direccion 
+        this._productos = []
+        this._pedidos = []
     }
     registrarProducto(x){
-        this.productos.push(x)
+        this._productos.push(x)
     }
     listarProducto(){
-        this.productos.forEach(x =>{
+        this._productos.forEach(x =>{
             console.log(x.getDescripcion())})
 
     }
     registrarPedido(y){
-        this.pedidos.push(y)
+        this._pedidos.push(y)
     }
     listarPedidos(){
-        this.pedidos.forEach(y =>{
+        this._pedidos.forEach(y =>{
             console.log(y.getResumen())
         })
     }

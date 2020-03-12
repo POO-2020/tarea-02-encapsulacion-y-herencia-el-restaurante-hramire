@@ -8,18 +8,18 @@ export default class Direccion {
     ciudad,
     municipio
   ) {
-    this.calle = calle;
-    this.numeroExterior = numeroExterior;
-    this.numeroInterior = numeroInterior;
-    this.colonia = colonia;
-    this.codigoPostal = codigoPostal;
-    this.ciudad = ciudad;
-    this.municipio = municipio;
+    this._calle = calle;
+    this._numeroExterior = numeroExterior;
+    this._numeroInterior = numeroInterior;
+    this._colonia = colonia;
+    this._codigoPostal = codigoPostal;
+    this._ciudad = ciudad;
+    this._municipio = municipio;
   }
   getFormatoCorto() {
-    return `${this.calle}, ${this.numeroExterior}`
+    return `${this._calle}, ${this._numeroExterior}`
   }
   getFormatoExtendido() {
-    return `${this.calle}, ${this.numeroExterior},${this.numeroInterior}, ${this.colonia}, ${this.codigoPostal}, ${this.ciudad}, ${this.municipio}`;
+    return `${this._calle}, ${this.__numeroExterior},${this._numeroInterior}, ${this._colonia}, ${this._codigoPostal}, ${this._ciudad}, ${this._municipio}`;
   }
 }
