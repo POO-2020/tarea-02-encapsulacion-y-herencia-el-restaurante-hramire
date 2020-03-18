@@ -1,9 +1,24 @@
-export default class Precio { 
-    constructor(valor){
-    this._valor = valor
-    };
+const formatterDolar = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  })
 
-getPrecio(){
-    return(`$${this._valor}`)
-}
+export default class Precio{
+
+    
+
+    constructor(valor)
+    {
+        this._valor = valor     
+    }
+
+    s
+    getPrecio(){
+        
+        return (`${formatterDolar.format(this._valor)}`)
+    }
+
+    getValor(){
+        return this._valor
+    }
 }

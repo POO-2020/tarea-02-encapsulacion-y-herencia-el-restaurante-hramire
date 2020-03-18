@@ -1,14 +1,22 @@
+import Precio from "./precio.js";
 export default class ElementoPedido{
-    /**
-     * 
-     * @param {string} producto producto vendido 
-     * @param {number} cantidad precio total
-     */
-    constructor(producto,cantidad){
+
+    constructor(producto, cantidad)
+    {
         this._producto = producto
         this._cantidad = cantidad
     }
+
     getDescripcion(){
-       return (`${this._cantidad} X ${this._producto.nombre} ${this._producto.precio.valor * this._cantidad}`)
+        let total = (this._cantidad * this._producto.getPrecio())
+        total = new Precio (total)
+        return(`${this._cantidad} X ${this._producto.getNombre()} ${total.getPrecio()}`)
     }
-} 
+
+    getPrecio(){
+        return this._producto.getPrecio()
+    }
+    getCantidad(){
+        return this._cantidad
+    }
+}

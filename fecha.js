@@ -1,49 +1,21 @@
-export default class Fecha{
-    /**
-     * 
-     * @param {number} dia día del año
-     * @param {number} mes Mes del año
-     * @param {number} año Año actual
-     */
-    constructor(dia,mes,año){
-      this._dia = dia 
-      this._mes = mes 
-      this._año = año 
-      this._date = new Date (this._año, this._mes, this._dia)
+export default class Fecha {
+    constructor(fecha)
+    {
+        this._fecha = fecha
+        this._fechaActual = new Date()
+        this._años = Math.floor(((this._fechaActual - this._fecha) / (1000 * 60 * 60 * 24) / 365));
     }
-    getAños(){
-        let añosTotales = 2020 - this._año
-        return (añosTotales)
 
-    }
-    getMeses(){
-        let meses= (2020 - this._año)*12
-        return(meses)
-
-    }
-    getSemanas(){
-        let semanas = (2020 - this._año)*(12)*4
-        return (semanas)
-
-    }
-    getDias(){
-        let dias = (2020 - this._año)*(12)*(4)*(7)
-        return (dias)
-
-    }
+    getAños(){return this._años}
+    getMeses(){return (this._años*12)}
+    getSemanas(){return (this._años*12*4)}
+    getDias(){return (this._años*12*4*7)}
     getFecha(){
-        let mes = ['ene','feb','mar','abr','may','jun','jul','agos','sept','oct','nov','dic'];
-        return `${this._dia}/${mes[this._mes -1]}/${this._año}`
-
-
-
-    }
-    
+        return (`${this._fecha.getDate()}/${this._fecha.getMonth()}/${this._fecha.getFullYear()}`)
+       }
     getDiaFecha(){
-        this._date.getDay()
-        let dia =  ['domingo','lunes','martes','miercoles','jueves','viernes','sabado']
-        return `${dia[ this._date.getDay()]}`
+       let dia = this._fecha.getDay()
+       let semana = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
+       return semana[dia]
     }
-
-
-} 
+}
